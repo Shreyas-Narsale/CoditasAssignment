@@ -1,0 +1,19 @@
+{
+    "ENV":"DEV",
+    "HOSTIP":"127.0.0.1",
+    "PORT":"3000",
+    "LOG_MODE":"INFO",
+    "PG_IP":"0.0.0.0",
+    "PG_PORT":"5432",
+    "PG_USER":"admin",
+    "PG_PASSWORD":"password",
+    "PG_DATABASE":"sca_portal",
+    "REDIS_IP":"0.0.0.0",
+    "REDIS_PORT":"6379",
+    "REDIS_PASSWORD":"password",
+    "JWT_SECRET_KEY_ACCESS_TOKEN":"3f2&$Lx%T7uK!vR8*Qm+zZcdAadsx@aWzN",
+    "JWT_SECRET_KEY_REFRESH_TOKEN":"3f2&$Lx%T7uK!vR8*Qm+zZcdAadsx@aWzN",
+    "ACCESS_TOKEN_EXP_TIME":"30",
+    "REFRESH_TOKEN_EXP_TIME":"2400",
+    "PASSWORD_PEPPER":"6z1gc3enf2l6tbelhulsfpmd2yybn9o4"
+}
