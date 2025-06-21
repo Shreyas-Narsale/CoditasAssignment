@@ -1,15 +1,12 @@
 package server
 
 import (
-	"SOCIAL_MEDIA_APP/components/helper"
-	"SOCIAL_MEDIA_APP/components/login"
+	"CODITAS_TASK/components/coditas"
 
-	"github.com/gofiber/fiber/v2"
+	"github.com/gin-gonic/gin"
 )
 
-func LoadRoutes(app *fiber.App) {
-	router := app.Group("/portal/api")
-
-	login.Routes(router)
-	helper.Routes(router)
+func LoadRoutes(router *gin.Engine) {
+	apiGroup := router.Group("/v1/api")
+	coditas.Routes(apiGroup)
 }

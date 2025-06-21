@@ -1,10 +1,10 @@
 package main
 
 import (
-	"SOCIAL_MEDIA_APP/cmd/server"
-	"SOCIAL_MEDIA_APP/pkg/config"
-	"SOCIAL_MEDIA_APP/pkg/logger"
-	"SOCIAL_MEDIA_APP/platform/database"
+	"CODITAS_TASK/cmd/server"
+	"CODITAS_TASK/pkg/config"
+	"CODITAS_TASK/pkg/logger"
+	"CODITAS_TASK/platform/database"
 )
 
 func init() {

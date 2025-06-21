@@ -1,26 +1,28 @@
 package utils
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Response struct {
 	StatusCode int                    `json:"StatusCode"`
 	Message    string                 `json:"Message"`
-	Data       interface{}            `json:"Data"`
-	Extras     map[string]interface{} `json:"Extras"`
+	Data       interface{}            `json:"Data,omitempty"`
+	Extras     map[string]interface{} `json:"Extras,omitempty"`
 }
 
 var statusMessages = map[int]string{
-	fiber.StatusOK:                  "Success",
-	fiber.StatusBadRequest:          "Bad Request",
-	fiber.StatusUnauthorized:        "Unauthorized",
-	fiber.StatusForbidden:           "Forbidden",
-	fiber.StatusNotFound:            "Not Found",
-	fiber.StatusInternalServerError: "Internal Server Error",
+	http.StatusOK:                  "Success",
+	http.StatusBadRequest:          "Bad Request",
+	http.StatusUnauthorized:        "Unauthorized",
+	http.StatusForbidden:           "Forbidden",
+	http.StatusNotFound:            "Not Found",
+	http.StatusInternalServerError: "Internal Server Error",
 }
 
-func SendResponse(c *fiber.Ctx, statusCode int, message string, data interface{}, extras map[string]interface{}) error {
+func SendResponse(c *gin.Context, statusCode int, message string, data interface{}, extras map[string]interface{}) {
 	if message == "" {
 		var ok bool
 		message, ok = statusMessages[statusCode]
@@ -36,6 +38,5 @@ func SendResponse(c *fiber.Ctx, statusCode int, message string, data interface{}
 		Extras:     extras,
 	}
 
-	c.Status(statusCode).JSON(response)
-	return nil
+	c.JSON(statusCode, response)
 }

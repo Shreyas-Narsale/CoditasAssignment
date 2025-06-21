@@ -1,11 +1,9 @@
 package database
 
 import (
-	"SOCIAL_MEDIA_APP/platform/database/postgress"
-	"SOCIAL_MEDIA_APP/platform/database/redis"
+	"CODITAS_TASK/platform/database/mysql"
 )
 
 func DatabaseConnections() {
-	postgress.GetPostgressDBInstance()
-	redis.GetRedisClient()
+	mysql.GetMySQLDBInstance()
 }

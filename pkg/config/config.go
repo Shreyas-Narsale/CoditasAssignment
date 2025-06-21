@@ -45,7 +45,6 @@ func SetEnvironmentVariable() {
 
 func LoadConfig() {
 	LoadApplicationConfig()
-	LoadLogConfig()
 	LoadDbConfig()
 	LoadGlobalConfig()
 }
