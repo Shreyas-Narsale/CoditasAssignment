@@ -3,24 +3,17 @@ package server
 import (
 	"CODITAS_TASK/pkg/config"
 	"CODITAS_TASK/pkg/logger"
-	"CODITAS_TASK/pkg/middleware"
 	"fmt"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
-
-	"github.com/gin-gonic/gin"
 )
 
 func Serve() {
 	logs := logger.GetLogger()
 
-	gin.SetMode(gin.ReleaseMode)
-	router := gin.New()
-	middleware.GinMiddleware(router)
-	LoadRoutes(router)
-
+	router := NewRouter()
 	AppConfig := config.GetAppConfig()
 	ServerAddr := fmt.Sprintf("%s:%d", AppConfig.HostIp, AppConfig.Port)
 
