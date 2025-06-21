@@ -7,4 +7,5 @@ import (
 func Routes(router *gin.RouterGroup) {
 	router.POST("/ping", PingPong)
 	router.POST("/test", TestApi)
+
 }
